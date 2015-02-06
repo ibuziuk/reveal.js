@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>BSU FPMI Java</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" href="css/custom.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<header>
+				<img width="300" height="200" src="images/bsu/exadel-logo.png" class="exadel_logo">
+			</header>
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1><span class="red">BSU FPMI</span> Java</h1>
+					<p>
+						<small>Created by <a href="https://github.com/ibuziuk" target="_blank">Ilya Buziuk</a> / <a href="https://twitter.com/ilyabuziuk"  target="_blank">@ilyabuziuk</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h1 class="presentation_heading">Why is this course<span class="red"> important?</span></h1>
+				</section>
+
+				<section>
+					<ul>
+						<li>
+							<h3>Immerse into <span class="red">development process</span></h3>
+						</li>
+						<li>
+							<h3>Improve <span class="red">programming skills</span></h3>
+						</li>
+						<li>
+							<h3>Learn <span class="red">new technologies</span></h3>
+						</li>
+						<li>
+							<h3>Great chance to get a <span class="red">Job</span> !</h3>						
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1><span class="red">What will we do?</span></h1>
+				</section>
+
+				<section>
+					<h2><span class="red">Web Chat</span></h2>
+					<img width="400" height="400" src="images/bsu/chat.png" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">Applications architecture</span></h2>
+					<img width="800" height="400" src="images/bsu/architecture.png" class="no-border">
+				</section>
+
+				<section>
+					<h1><span class="red">What will we need for</span> development?</h1>
+				</section>
+
+				<section>
+					<h2><span class="red">Tools</span></h2>
+					<ul>
+						<li>
+							<a href="https://www.jetbrains.com/idea/" target="_blank">Java IDE</a>
+						</li>
+						<li>
+							<a href="https://github.com/" target="_blank">Git / GitHub</a>
+						</li>
+						<li>
+							<a href="http://www.telerik.com/fiddler" target="_blank">Fiddler - Web debugging proxy</a>
+						</li>
+						<li>
+							<a href="https://developer.chrome.com/devtools" target="_blank">Chrome Dev Tools</a>
+						</li>
+						<li>
+							<a href="http://www.mysql.com/products/workbench/" target="_blank">MySQL Workbench</a>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Useful tips</h2>
+					<ul>
+						<li>
+							<h3>Google in<span class="red"> English!</span></h3>
+						</li>
+						<li>
+							<h3>Use git from console<span class="red"> (NO GUI Clients)!</span></h3>
+						</li>
+						<li>
+							<h3>Accept the <span class="red">Challenge!</span></h3>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Questions <span class="red">&</span> Proposals</h2>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				slideNumber: true,
+				center: true,
+				keyboard: true,
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: 'none', 
+
+				backgroundTransition: 'default',
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
