@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Servlets / Tomcat / Maven</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Ilya Buziuk">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" href="css/custom.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<header>
+				<img width="200" height="100" src="images/bsu/exadel-logo.png" class="exadel_logo">
+			</header>
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2><span class="red">Servlet / Tomcat / Maven<span></h2>
+					<p>
+						<small>Created by <a href="https://github.com/ibuziuk" target="_blank">Ilya Buziuk</a> / <a href="https://twitter.com/ilyabuziuk"  target="_blank">@ilyabuziuk</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2><span class="red">Introduction<span></h2>
+				</section>
+
+				<section>
+					<h2><span class="red">Client-Server architecture<span></h2>
+					<img width="1000" height="300" src="images/bsu/client-server.png" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">Main HTTP methods<span></h2>
+					<img width="1000" height="500" src="images/bsu/main-http-methods.gif" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">What is done<span></h2>
+					<ul>
+						<li>
+							<h4>
+								Client part is ready! (js / html / css)
+							</h4>
+						</li>
+						<li>
+							<h4>We know how HTTP works (XMLHttpRequest / AJAX)</h4>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2><span class="red">What needs to be done<span></h2>
+					<ul>
+						<li>
+							<h4>
+								Write server part on Java
+							</h4>
+						</li>
+						<li>
+							<h4>Tune interaction between Client and Server</h4>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2><span class="red">Servlet</span></h2>
+				</section>
+
+				<section>
+					<h2><span class="red">Servlet</span></h2>
+					<blockquote>Java class which responds to a particular type of network request - most commonly an HTTP request</blockquote>
+				</section>
+
+				<section>
+					<h2>Servlet</h2>
+					<h2><span class="red">Under the Hood<span></h2>
+				</section>
+
+				<section>
+					<h4><span class="red">Interface</span> javax.servlet.Servlet</h4>
+					<img width="600" height="700" src="images/bsu/servlet-interface.png" class="no-border">
+				</section>
+
+				<section>
+					<ul>
+						<li>
+							<h4>All servlets <span class="red">must</span> implement this interface</h4>
+						</li>
+						<li>
+							<h4>All methods of interface Servlet are invoked by <span class="red">servlet container</span></h4>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2><span class="red">Servlet Container<span></h2>
+					<blockquote>component of a web server that interacts with <span class="red">Java servlets</span>
+					</blockquote>
+				</section>
+
+				<section>
+					<h3><span class="red">Container responsibilities:</span></h3>
+					<h3></h3>
+					<ul>
+						<li><h2>Servlet lifecycle</h2></li>
+						<li><h2>URL mapping</h2></li>
+						<li><h2>Access rights</h2></span></li>
+					</ul>
+				</section> 
+
+				<section>
+					<h2><span class="red">Servlet lifecycle<span></h2>
+					<ul>
+						<li><h2>init</h2></li>
+						<li><h2>service</h2></li>
+						<li><h2>destroy</h2></li>
+					</ul>  
+				</section>
+
+				<section>
+					<img width="800" height="600" src="images/bsu/servlet-life-cycle.png" class="no-border">
+				</section>
+
+				<section>
+					<h2>How it works?</h2>
+					<img width="600" height="500" src="images/bsu/servlet-container.png" class="no-border">
+				</section>
+			    
+			    <section>
+					<h2>How it works?</h2>
+					<img width="400" height="600" src="images/bsu/web-app-in-container.png" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">Class hieranchy<span></h2>
+					<img width="600" height="300" src="images/bsu/servlet-hierarchy.png" class="no-border">
+				</section>
+
+				<section>
+					<h2>HttpServlet service()</h2>
+					<img width="700" height="750" src="images/bsu/service.png" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">Custom Servlet</span></h2>
+					<ol>
+						<li>
+							<h4>Extend HttpServlet</h4>
+						</li>
+						<li>
+							<h4>Add @WebServlet Annotation</h4>						
+						</li>
+						<li>
+							<h4>Override doGet / doPost / doPut / doDelete</h4>						
+						</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Custom Servlet</h2>
+					<img width="1100" height="300" src="images/bsu/servlet-impl.png" class="no-border">
+				</section>
+
+				<section>
+					<h2>Custom Servlet</h2>
+					<img width="1100" height="180" src="images/bsu/doGet.png" class="no-border">
+				</section>
+
+				<section>
+					<h2>Http Servlet Response</h2>
+					<img width="1100" height="200" src="images/bsu/200-and-404.png" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">JAR</span> and <span class="red">WAR</span></h2>
+				</section>
+
+				<section>
+					<h2>What is <span class="red">JAR</span> ?</h2>
+				</section> 
+
+				<section>
+					<img width="800" height="300" src="images/bsu/jar.png" class="no-border">
+				</section>
+
+
+				<section>
+					<h2>What is <span class="red">WAR</span> ?</h2>
+				</section> 
+
+				<section>
+					<h2>What is <span class="red">WAR</span> ?</h2>
+					<blockquote>web application archive that can be deployed on any servlet container. The .war file contains <span class="red">server-side classes, jsp, html, javascript</span> etc.</blockquote>
+				</section>
+
+				<section>
+					<h2>WAR structure</h2>
+					<img width="700" height="400" src="images/bsu/war.gif" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">Tomcat</span></h2>
+					<img width="400" height="400" src="images/bsu/apache-tomcat.gif" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">Under the Hood</span></h2>
+					<img width="1000" height="500" src="images/bsu/tomcat-under-the-hood.png" class="no-border">
+				</section>
+
+				<section>
+					<h3><span class="red">How to install standalone?</span></h3>
+					<ul>
+						<li>
+							<h4>
+								<a href="http://tomcat.apache.org/" target="_blank">Download</a>
+							</h4>
+						</li>
+						<li>
+							<h4>Unpack</h4>						
+						</li>
+						<li>
+							<h4>set JAVA_HOME var</h4>						
+						</li>
+						<li>
+							<h4>set CATALINA_HOME var</h4>						
+						</li>
+						<li>
+							<h4>update PATH var</h4>						
+						</li
+					</ul>
+					<span class="red">%JAVA_HOME%\bin;%CATALINA_HOME%\bin</span>
+				</section>
+
+				<section>
+					<h3><span class="red">How to run (Windows / Linux)?</span></h3>
+					<ul>
+						<li>
+							<h4>run <span class="red">startup.bat</span> or <span class="red">./startup.sh</span> from console</h4>					
+						</li>
+						
+					</ul>
+					<img width="800" height="400" src="images/bsu/tomcat-start.png" class="no-border">
+				</section>
+
+				<section>
+					    <h3><span class="red">Check</span></h3>
+						<img width="1000" height="700" src="images/bsu/startup-browser-tomcat.png" class="no-border">
+				</section>
+
+				<section>
+					<h3><span class="red">How to use in IDE?</span></h3>
+					<ul>
+						<li>
+							<h4>
+								<a href="http://tomcat.apache.org/" target="_blank">Download</a>
+							</h4>
+						</li>
+						<li>
+							<h4>Unpack</h4>						
+						</li>
+						<li>
+							<h4>Add to IDE</h4>						
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1 class="presentation_heading"><span class="red">Maven</span></h1>
+				</section>
+
+				<section>
+					<h2 class="presentation_heading">Why do we need</h2>
+					<h1><span class="red">Maven?</span></h1>
+				</section>
+
+				<section>
+					<h2 class="presentation_heading"><span class="red">2 main reasons</span></h2>
+					<ul>
+						<li>
+							<h4>Need to automate process of deployment</h4>
+						</li>
+						<li>
+							<h4>Dependency Hell</h4>						
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2 class="presentation_heading"><span class="red">What is Maven?</span></h2>
+					<ul>
+						<li>
+							<h3>Command line tool</span></h3>
+						</li>
+						<li>
+							<h3>Dependency manager</span></h3>
+						</li>
+						<li>
+							<h3>Building tool</span></h3>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2><span class="red">How to install Maven?</span></h2>
+					<ul>
+						<li>
+							<h3>Download</h3>
+						</li>
+						<li>
+							<h3>Unpack</h3>
+						</li>
+						<li>
+							<h3>set M2_HOME var</span></h3>
+						</li>
+						<li>
+							<h3>Add $M2_HOME/bin to PATH</span></h3>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2><span class="red">Check installation</span></h2>
+					<h2>mvn -v</h2>
+					<img width="800" height="400" src="images/bsu/cmd-maven-check.png" class="no-border">
+				</section>
+
+				<section>
+					<h2>Project Object Model <span class="red">(POM)</span></h2>
+					<img width="800" height="800" src="images/bsu/pom.png" class="no-border">
+				</section>
+
+				<section>
+					<ul>
+						<li>
+							<h3><span class="red">version</span> - identify version of the project (1.0, 1.1, etc.)</h3>
+						</li>
+						<li>
+							<h3><span class="red">groupId</span> - identify project uniquely across all projects</h3>
+						</li>
+						<li>
+							<h3><span class="red">artifactId</span> - name of jar / war without version</h3>
+						</li>
+					</ul>
+				</section>
+
+
+				<section>
+					<h2><span class="red">Maven Lifecycle</span></h2>
+					<img width="400" height="600" src="images/bsu/maven-lifecycle.jpg" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">How does Maven work?</span></h2>
+					<img width="800" height="600" src="images/bsu/maven.png" class="no-border">
+				</section>
+
+				<section>
+					<h1><span class="red">How to find</span> dependencies?</h1>
+				</section>
+
+				<section>
+					<h2><span class="red">Google</span> it</h2>
+
+					<img width="500" height="200" src="images/bsu/servlet-maven.png" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">Useful links</span></h2>
+					<ul>
+						<li>
+							<a href="http://docs.oracle.com/javaee/6/tutorial/doc/bnafe.html" target="_blank">Servlet</a>
+						</li>
+						<li>
+							<a href="http://www.w3schools.com/jquery/jquery_ref_ajax.asp " target="_blank">jQuery AJAX</a>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Questions <span class="red">&</span> Proposals</h2>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				slideNumber: true,
+				center: true,
+				keyboard: true,
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: 'none', 
+
+				backgroundTransition: 'default',
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
+

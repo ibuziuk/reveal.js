@@ -1,3 +1,7 @@
+.reveal h2 {
+	padding-bottom: 35px;
+}
+
 .logo {
 	position: absolute;
 	top: 120px; 
@@ -48,5 +52,24 @@
 	right: 100px; 
 	z-index:500; 
 	background-color: white;
+}
+
+.reveal table {
+  border: 1px solid black;
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.reveal table th {
+  border: 1px solid black;
+  font-weight: bold;
+}
+
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border: 1px solid black;
 }
 
