@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Servlets & JSP</title>
+
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Ilya Buziuk">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="css/reveal.min.css">
+	<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+	<script>
+	if( window.location.search.match( /print-pdf/gi ) ) {
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = 'css/print/pdf.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	}
+	</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" href="css/custom.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<header>
+				<img width="200" height="100" src="images/bsu/exadel-logo.png" class="exadel_logo">
+			</header>
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2><span class="red">Servlets & JSP<span></h2>
+					<p>
+						<small>Created by <a href="https://github.com/ibuziuk" target="_blank">Ilya Buziuk</a> / <a href="https://twitter.com/ilyabuziuk"  target="_blank">@ilyabuziuk</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2><span class="red">Servlet</span></h2>
+				</section>
+
+				<section>
+					<h2><span class="red">Are Servlets Thread Safe?<span></h2>
+				</section>
+
+				<section>
+					<img width="800" height="600" src="images/bsu/servlet-how-it-works.jpg" class="no-border">
+				</section>
+
+				<section>
+					<img width="800" height="600" src="images/bsu/servlet-life-cycle.png" class="no-border">
+				</section>
+
+				<section>
+					<h3>Thread safety is similar to <span class="red">standalone</span></h3>
+					<h3>Java applications</h3>
+				</section>
+
+				<section>
+					<h2>Do not <span class="red">@Override</span> service() method!</h2>
+				</section>
+
+				<section>
+					<h2><span class="red">Servlet attributes</span></h2>
+				</section>
+
+				<section>
+					<h2><span class="red">Servlet Scope</span></h2>
+					<ul>
+						<li>
+							<h4>Application / Context</h4>
+						</li>
+						<li>
+							<h4>Session</h4>						
+						</li>
+						<li>
+							<h4>Request</h4>						
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2><span class="red">Servlet Config</span></h2>
+						<pre><code data-trim>
+							javax.servlet.ServletConfig
+						</code></pre>
+				</section>
+
+				<section>
+					<h2><span class="red">Servlet Context</span></h2>
+						<pre><code data-trim>
+							javax.servlet.ServletContext
+						</code></pre>
+				</section>
+
+				<section>
+					<h3><span class="red">ServletConfig</span> vs. <span class="red">ServletContext</span></h3>
+				</section>
+
+				<section>
+					<h2><span class="red">Deployment descriptor</span></h2>
+				</section>
+
+				<section>
+					<h2><span class="red">web.xml</span></h2>
+					<blockquote>File to configure web application servlets, servlet config params, context init params, filters, listeners, welcome pages and error handlers</blockquote>
+				</section>
+
+				<section>
+					<h2>Use <span class="red">annotations</span> as much as possible !</h2>
+				</section>
+
+				<section>
+					<h2><span class="red">Common Annotations</span></h2>
+					<ul>
+						<li>
+							<h4>@WebServlet</h4>
+						</li>
+						<li>
+							<h4>@WebFilter</h4>						
+						</li>
+						<li>
+							<h4>@WebInitParam</h4>						
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2><span class="red">Servlet Filters</span></h2>
+				</section>
+
+				<section>
+					<h2><span class="red">Servlet Filters</span></h2>
+					<ul>
+						<li>
+							<h4>Validation</h4>
+						</li>
+						<li>
+							<h4>Authentication</h4>
+						</li>
+						<li>
+							<h4>Data compression</h4>						
+						</li>
+						<li>
+							<h4>Internationalization</h4>						
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					 <h2><span class="red">Filter API Interfaces</span></h2>
+					<img width="500" height="300" src="images/bsu/Filter-API-Interfaces.jpg" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">FilterConfig</span></h2>
+						<pre><code>
+							getFilterName()
+							getInitParameter(String)
+							getInitParameterNames()
+							getServletContext()
+						</code></pre>
+				</section>
+
+				<section>
+					<h2><span class="red">Filter</span></h2>
+						<pre><code>
+							init(FilterConfig)
+							doFilter(ServletRequest, ServletResponse, FilterChain)
+							destroy()
+						</code></pre>
+				</section>
+
+				<section>
+					<h2><span class="red">Filter Chain</span></h2>
+				</section>
+
+				<section>
+					<h2><span class="red">Exception Handling</span></h2>
+				</section>
+
+				<section>
+					<h2><span class="red">Exception Handling</span></h2>
+					<pre><code contenteditable>
+					<error-page>
+						<error-code>404</error-code>
+						<location>/AppExceptionHandler</location>
+					</error-page>
+
+					<error-page>
+						<exception-type>javax.servlet.ServletException</exception-type>
+						<location>/AppExceptionHandler</location>
+					</error-page>
+			</code></pre>
+		</section>
+
+
+			<section>
+				<h2><span class="red">Transport layer security</span></h2>
+			</section>
+
+				<section>
+					<h2><span class="red">JSP</span> (JavaServer Pages)</h2>
+				</section>
+
+				<section>
+					<h2><span class="red">JSP</span></h2>
+					<blockquote>Server side technology which helps to create a webpage dynamically using java as the programming language. Extension to Servlet API</blockquote>
+				</section>
+
+				<section>
+					<h2>JSP program is a <span class="red">HTML</span> code which supports <span class="red">Java</span> statements</h2>
+				</section>
+
+				<section>
+					<h2><span class="red">JSP Scriplets</span></h2>
+				</section>
+
+				<section>
+					<h2><span class="red">JSP Scriplets</span></h2>
+					<pre><code>
+					<%
+						Date d = new Date();
+						System.out.println("Current Date="+d);
+					%>
+					</code></pre>
+				</section>
+
+				<section>
+					<h2><span class="red">Standard Tag Library (JSTL) </span></h2>
+				</section>
+
+				<section>
+					<h2><span class="red">JSTL</span></h2>
+					<ul>
+						<li>
+							<h4>Core Tags</h4>
+						</li>
+						<li>
+							<h4>Formatting tags</h4>						
+						</li>
+						<li>
+							<h4>SQL tags</h4>						
+						</li>
+						<li>
+							<h4>XML tags</h4>						
+						</li>
+						<li>
+							<h4>JSTL Functions</h4>						
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2><span class="red">Custom Tags</span></h2>
+				</section>
+
+				<section>
+					<h2><span class="red">Page Scope</span></h2>
+				</section>
+
+				<section>
+					<h2><span class="red">Attributes in a JSP</span></h2>
+				</section>
+
+				<section>
+					<img width="400" height="300" src="images/bsu/top-secret.png" class="no-border">
+					<h1>JSP is a Servlet</h2>
+				</section>
+
+				<section>
+					<h2><span class="red">JSP lifecycle</span></h2>
+					<ul>
+						<li>
+							<h4>Compilation</h4>
+						</li>
+						<li>
+							<h4>Initialization</h4>						
+						</li>
+						<li>
+							<h4>Execution</h4>						
+						</li>
+						<li>
+							<h4>Cleanup</h4>						
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<img width="600" height="500" src="images/bsu/jsp-life-cycle.jpg" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">JSP compilation</span></h2>
+					<ul>
+						<li>
+							<h4>Parsing</h4>
+						</li>
+						<li>
+							<h4>Turning JSP into Servlet</h4>						
+						</li>
+						<li>
+							<h4>Compiling Servlet</h4>						
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<img width="1000" height="500" src="images/bsu/tomcat-under-the-hood.png" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">From theory to practise</span></h2>
+				</section>
+
+				<section>
+					<h2><span class="red">TODOs 5.0</span></h2>
+				</section>
+
+				<section>
+					<h2><span class="red">DEMO</span></h2>
+				</section>
+
+				<section>
+					<h2><span class="red">Servlets</h2>
+
+ 					<h3>VS.</h3>
+
+					<h2><span class="red">JSP</h2>
+				</section>
+
+
+				<section>
+					<h2><span class="red">Servlet</span></h2>
+					<ul>
+						<li>
+							Business logic (Controllers)
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2><span class="red">JSP</span></h2>
+					<ul>
+						<li>
+							Presentation Layer (View)
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2><span class="red">Useful links</span></h2>
+					<ul>
+						<li>
+							<a href="http://docs.oracle.com/javaee/6/tutorial/doc/bnafe.html" target="_blank">Servlet</a>
+						</li>
+						<li>
+							<a href="http://www.w3schools.com/jquery/jquery_ref_ajax.asp " target="_blank">JSP</a>
+						</li>
+						<li>
+							<a href="http://www.w3schools.com/jquery/jquery_ref_ajax.asp " target="_blank">jQuery AJAX</a>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Questions <span class="red">&</span> Proposals</h2>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				slideNumber: true,
+				center: true,
+				keyboard: true,
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: 'none', 
+
+				backgroundTransition: 'default',
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+				{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+</script>
+
+</body>
+</html>
+
