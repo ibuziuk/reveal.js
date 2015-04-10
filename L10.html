@@ -54,7 +54,7 @@
 				</section>
 
 				<section>
-					<h2><span class="red">Introduction<span></h2>
+					<h1><span class="red">Introduction<span></h1>
 				</section>
 
 				<section>
@@ -65,6 +65,21 @@
 				<section>
 					<h2><span class="red">Main HTTP methods<span></h2>
 					<img width="1000" height="500" src="images/bsu/main-http-methods.gif" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">Applications architecture</span></h2>
+					<img width="800" height="400" src="images/bsu/architecture.png" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">Applications architecture</span></h2>
+					<img width="800" height="400" src="images/bsu/architecture-done.png" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">Applications architecture</span></h2>
+					<img width="800" height="400" src="images/bsu/architecture-todo.png" class="no-border">
 				</section>
 
 				<section>
@@ -96,7 +111,11 @@
 				</section>
 
 				<section>
-					<h2><span class="red">Servlet</span></h2>
+					<h1><span class="red">Questions ?</span></h1>
+				</section>
+
+				<section>
+					<h1><span class="red">Servlet</span></h1>
 				</section>
 
 				<section>
@@ -114,7 +133,25 @@
 					<img width="600" height="700" src="images/bsu/servlet-interface.png" class="no-border">
 				</section>
 
+
 				<section>
+					<h4><span class="red">Interface</span> javax.servlet.Servlet</h4>
+					<pre><code>
+						public void init(ServletConfig config) throws ServletException;
+
+						public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException;
+
+						public void destroy();
+					</code></pre>
+				</section>
+
+				<section>
+					<h2><span class="red">Class hieranchy<span></h2>
+					<img width="600" height="300" src="images/bsu/servlet-hierarchy.png" class="no-border">
+				</section>
+
+				<section>
+					<h3><span class="red">Ground Rules</h4>
 					<ul>
 						<li>
 							<h4>All servlets <span class="red">must</span> implement this interface</h4>
@@ -152,12 +189,8 @@
 
 
 				<section>
+					<h2><span class="red">Servlet lifecycle<span></h2>
 					<img width="800" height="600" src="images/bsu/servlet-life-cycle.png" class="no-border">
-				</section>
-
-				<section>
-					<h2>How it works?</h2>
-					<img width="400" height="600" src="images/bsu/web-app-in-container.png" class="no-border">
 				</section>
 
 				<section>
@@ -171,13 +204,28 @@
 				</section>
 
 				<section>
-					<h2><span class="red">Class hieranchy<span></h2>
-					<img width="600" height="300" src="images/bsu/servlet-hierarchy.png" class="no-border">
+					<h2>HttpServlet service()</h2>
+					<img width="700" height="750" src="images/bsu/service.png" class="no-border">
 				</section>
 
 				<section>
 					<h2>HttpServlet service()</h2>
-					<img width="700" height="750" src="images/bsu/service.png" class="no-border">
+					<pre><code>
+        } else if (method.equals(METHOD_POST)) {
+            doPost(req, resp);
+            
+        } else if (method.equals(METHOD_PUT)) {
+            doPut(req, resp);
+            
+        } else if (method.equals(METHOD_DELETE)) {
+            doDelete(req, resp);
+            
+        } else if (method.equals(METHOD_OPTIONS)) {
+            doOptions(req,resp);
+            
+        } else if (method.equals(METHOD_TRACE)) {
+            doTrace(req,resp);
+					</code></pre>
 				</section>
 
 				<section>
@@ -200,6 +248,12 @@
 					<img width="1100" height="300" src="images/bsu/servlet-impl.png" class="no-border">
 				</section>
 
+
+				<section>
+					<h2>Custom Servlet</h2>
+					<img width="1100" height="300" src="images/bsu/servlet-impl.png" class="no-border">
+				</section>
+
 				<section>
 					<h2>Custom Servlet</h2>
 					<img width="1100" height="180" src="images/bsu/doGet.png" class="no-border">
@@ -208,6 +262,10 @@
 				<section>
 					<h2>Http Servlet Response</h2>
 					<img width="1100" height="200" src="images/bsu/200-and-404.png" class="no-border">
+				</section>
+
+				<section>
+					<h1><span class="red">Questions ?</span></h1>
 				</section>
 
 				<section>
@@ -221,7 +279,6 @@
 				<section>
 					<img width="800" height="300" src="images/bsu/jar.png" class="no-border">
 				</section>
-
 
 				<section>
 					<h2>What is <span class="red">WAR</span> ?</h2>
@@ -245,6 +302,11 @@
 				<section>
 					<h2><span class="red">Under the Hood</span></h2>
 					<img width="1000" height="500" src="images/bsu/tomcat-under-the-hood.png" class="no-border">
+				</section>
+
+				<section>
+					<h2>How it works?</h2>
+					<img width="400" height="600" src="images/bsu/web-app-in-container.png" class="no-border">
 				</section>
 
 				<section>
@@ -317,6 +379,10 @@
 				</section>
 
 				<section>
+					<h1><span class="red">Questions ?</span></h1>
+				</section>
+
+				<section>
 					<h1 class="presentation_heading"><span class="red">Maven</span></h1>
 				</section>
 
@@ -326,13 +392,16 @@
 				</section>
 
 				<section>
-					<h2 class="presentation_heading"><span class="red">2 main reasons</span></h2>
+					<h2 class="presentation_heading"><span class="red">Main reasons</span></h2>
 					<ul>
 						<li>
 							<h4>Need to automate process of deployment</h4>
 						</li>
 						<li>
 							<h4>Dependency Hell</h4>						
+						</li>
+						<li>
+							<h4>Universal Tool (not coupled with IDE)</h4>						
 						</li>
 					</ul>
 				</section>
@@ -423,7 +492,10 @@
 							<a href="http://docs.oracle.com/javaee/6/tutorial/doc/bnafe.html" target="_blank">Servlet</a>
 						</li>
 						<li>
-							<a href="http://www.w3schools.com/jquery/jquery_ref_ajax.asp " target="_blank">jQuery AJAX</a>
+							<a href="http://mvnrepository.com/" target="_blank">Maven</a>
+						</li>
+						<li>
+							<a href="http://www.w3schools.com/jquery/jquery_ref_ajax.asp" target="_blank">jQuery AJAX</a>
 						</li>
 					</ul>
 				</section>
