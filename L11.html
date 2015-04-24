@@ -47,18 +47,65 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h2><span class="red">Servlets & JSP<span></h2>
+					<h1><span class="red">Servlets & JSP<span></h1>
 					<p>
 						<small>Created by <a href="https://github.com/ibuziuk" target="_blank">Ilya Buziuk</a> / <a href="https://twitter.com/ilyabuziuk"  target="_blank">@ilyabuziuk</a></small>
 					</p>
 				</section>
 
 				<section>
-					<h2><span class="red">Servlet</span></h2>
+					<h1><span class="red">Quick Revision</span></h1>
 				</section>
 
 				<section>
-					<h2><span class="red">Are Servlets Thread Safe?<span></h2>
+					<h2><span class="red">Servlet</span></h2>
+					<blockquote>Java class which responds to a particular type of network request - most commonly an HTTP request</blockquote>
+				</section>
+
+				<section>
+					<h2>All methods of Servlet are invoked by <span class="red">servlet container</span></h2>
+				</section>
+
+				<section>
+					<h2><span class="red">Servlet lifecycle<span></h2>
+					<ul>
+						<li><h2>init</h2></li>
+						<li><h2>service</h2></li>
+						<li><h2>destroy</h2></li>
+					</ul>  
+				</section>
+
+				<section>
+					<h2>Servlet Container</h2>
+					<img width="400" height="600" src="images/bsu/servlet-life-cycle-container.png" class="no-border">
+				</section>
+				
+				<section>
+					<h2>Servlet lifecycle</h2>
+					<img width="800" height="600" src="images/bsu/servlet-life-cycle.png" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">Custom Servlet</span></h2>
+					<ol>
+						<li>
+							<h4>Extend HttpServlet</h4>
+						</li>
+						<li>
+							<h4>Add @WebServlet Annotation</h4>						
+						</li>
+						<li>
+							<h4>Override doGet / doPost / doPut </h4>						
+						</li>
+					</ol>
+				</section>
+
+				<section>
+					<h1><span class="red">Questions ?</span></h1>
+				</section>
+
+				<section>
+					<h2>Are Servlets <span class="red">Thread</span> Safe?</h2>
 				</section>
 
 				<section>
@@ -66,7 +113,8 @@
 				</section>
 
 				<section>
-					<img width="800" height="600" src="images/bsu/servlet-life-cycle.png" class="no-border">
+					<h2>Rule of thumb</h2>
+					<h2>Do <span class="red">not synchronize</span> doGet, doPost, etc..</h2>
 				</section>
 
 				<section>
@@ -79,20 +127,24 @@
 				</section>
 
 				<section>
+					<h2><span class="red">ServletConfig</span> and <span class="red">init()</span> instead of Constructor</h2>
+				</section>
+
+				<section>
 					<h2><span class="red">Servlet attributes</span></h2>
 				</section>
 
 				<section>
-					<h2><span class="red">Servlet Scope</span></h2>
+					<h2><span class="red">Servlet Scopes</span></h2>
 					<ul>
 						<li>
-							<h4>Application / Context</h4>
+							<h3>Application / Context</h3>
 						</li>
 						<li>
-							<h4>Session</h4>						
+							<h3>Session</h3>						
 						</li>
 						<li>
-							<h4>Request</h4>						
+							<h3>Request</h3>						
 						</li>
 					</ul>
 				</section>
@@ -112,11 +164,34 @@
 				</section>
 
 				<section>
-					<h3><span class="red">ServletConfig</span> vs. <span class="red">ServletContext</span></h3>
+					<h1><span class="red">ServletConfig</span></h1>
+					vs.
+					<h1><span class="red">ServletContext</span></h1>
 				</section>
 
 				<section>
-					<h2><span class="red">Deployment descriptor</span></h2>
+					<h2><span class="red">ServletContext</span> Interface</h2>
+					<pre><code>
+							public void setAttribute(String name, Object object);
+							public Object getAttribute(String name);
+							public Enumeration getAttributeNames();
+							public void removeAttribute(String name);
+				</code></pre>
+			</section>
+
+
+			<section>
+				<h2><span class="red">HttpSession</span> Interface</h2>
+				<pre><code>
+						public Object getAttribute(String name);
+						public void setAttribute(String name, Object value);
+						public Enumeration getAttributeNames();
+						public void removeAttribute(String name);
+				</code></pre>
+		</section>
+
+				<section>
+					<h1><span class="red">Deployment descriptor</span></h1>
 				</section>
 
 				<section>
@@ -142,9 +217,15 @@
 						</li>
 					</ul>
 				</section>
+				
+				<section>
+					<h2><span class="red">Filters</span></h2>
+					<img width="600" height="600" src="images/bsu/filters.jpg" class="no-border">
+				</section>
 
 				<section>
 					<h2><span class="red">Servlet Filters</span></h2>
+					<img width="800" height="600" src="images/bsu/servlet-filters.png" class="no-border">
 				</section>
 
 				<section>
@@ -167,7 +248,7 @@
 
 				<section>
 					 <h2><span class="red">Filter API Interfaces</span></h2>
-					<img width="500" height="300" src="images/bsu/Filter-API-Interfaces.jpg" class="no-border">
+					<img width="800" height="500" src="images/bsu/Filter-API-Interfaces.jpg" class="no-border">
 				</section>
 
 				<section>
@@ -182,44 +263,54 @@
 
 				<section>
 					<h2><span class="red">Filter</span></h2>
-						<pre><code>
-							init(FilterConfig)
-							doFilter(ServletRequest, ServletResponse, FilterChain)
-							destroy()
-						</code></pre>
+					<pre><code>
+						init(FilterConfig)
+						doFilter(ServletRequest, ServletResponse, FilterChain)
+						destroy()
+					</code></pre>
+				</section>
+
+				<section>
+					<h2><span class="red">Custom Filter</span></h2>
+					<ol>
+						<li>
+							<h4>implement Filter</h4>
+						</li>
+						<li>
+							<h4>Add @WebServlet Annotation</h4>						
+						</li>
+						<li>
+							<h4>Override doFilter </h4>						
+						</li>
+					</ol>
 				</section>
 
 				<section>
 					<h2><span class="red">Filter Chain</span></h2>
+					<pre><code>
+						// pass the request along the filter chain
+						chain.doFilter(request, response);
+					</code></pre>
 				</section>
 
-				<section>
-					<h2><span class="red">Exception Handling</span></h2>
-				</section>
+					<section>
+						<h2><span class="red">Exception Handling</span></h2>
+						<pre><code contenteditable>
+							<error-page>
+							<error-code>404</error-code>
+							<location>/AppExceptionHandler</location>
+						</error-page>
 
-				<section>
-					<h2><span class="red">Exception Handling</span></h2>
-					<pre><code contenteditable>
-					<error-page>
-						<error-code>404</error-code>
-						<location>/AppExceptionHandler</location>
-					</error-page>
-
-					<error-page>
+						<error-page>
 						<exception-type>javax.servlet.ServletException</exception-type>
 						<location>/AppExceptionHandler</location>
 					</error-page>
-			</code></pre>
-		</section>
-
-
-			<section>
-				<h2><span class="red">Transport layer security</span></h2>
+				</code></pre>
 			</section>
 
-				<section>
-					<h2><span class="red">JSP</span> (JavaServer Pages)</h2>
-				</section>
+			<section>
+				<h2><span class="red">JSP</span> (JavaServer Pages)</h2>
+			</section>
 
 				<section>
 					<h2><span class="red">JSP</span></h2>
@@ -230,9 +321,6 @@
 					<h2>JSP program is a <span class="red">HTML</span> code which supports <span class="red">Java</span> statements</h2>
 				</section>
 
-				<section>
-					<h2><span class="red">JSP Scriplets</span></h2>
-				</section>
 
 				<section>
 					<h2><span class="red">JSP Scriplets</span></h2>
@@ -241,6 +329,13 @@
 						Date d = new Date();
 						System.out.println("Current Date="+d);
 					%>
+					</code></pre>
+				</section>
+
+				<section>
+					<h2><span class="red">JSP Expression</span></h2>
+					<pre><code>
+					<%= "Hello world" %> 
 					</code></pre>
 				</section>
 
@@ -268,19 +363,7 @@
 						</li>
 					</ul>
 				</section>
-
-				<section>
-					<h2><span class="red">Custom Tags</span></h2>
-				</section>
-
-				<section>
-					<h2><span class="red">Page Scope</span></h2>
-				</section>
-
-				<section>
-					<h2><span class="red">Attributes in a JSP</span></h2>
-				</section>
-
+				
 				<section>
 					<img width="400" height="300" src="images/bsu/top-secret.png" class="no-border">
 					<h1>JSP is a Servlet</h2>
@@ -305,7 +388,8 @@
 				</section>
 
 				<section>
-					<img width="600" height="500" src="images/bsu/jsp-life-cycle.jpg" class="no-border">
+					<h2><span class="red">JSP lifecycle</span></h2>
+					<img width="800" height="600" src="images/bsu/jsp-life-cycle.jpg" class="no-border">
 				</section>
 
 				<section>
@@ -328,42 +412,112 @@
 				</section>
 
 				<section>
+					<img width="1000" height="500" src="images/bsu/jasper.png" class="no-border">
+				</section>
+
+				<section>
+					<h2>How to check ?</h2>
+					<h4><span class="red">${TOMCAT_HOME}/work/Catalina/localhost</span></h4>
+				</section>
+
+				<section>
 					<h2><span class="red">From theory to practise</span></h2>
 				</section>
 
 				<section>
-					<h2><span class="red">TODOs 5.0</span></h2>
+					<h1><span class="red">DEMO</span></h1>
 				</section>
 
 				<section>
-					<h2><span class="red">DEMO</span></h2>
-				</section>
-
-				<section>
-					<h2><span class="red">Servlets</h2>
+					<h1><span class="red">Servlets</h2>
 
  					<h3>VS.</h3>
 
-					<h2><span class="red">JSP</h2>
+					<h1><span class="red">JSP</h1>
 				</section>
 
 
 				<section>
-					<h2><span class="red">Servlet</span></h2>
-					<ul>
-						<li>
-							Business logic (Controllers)
-						</li>
-					</ul>
+					<h1><span class="red">Servlet</span></h1>
+					<h3>Business logic (Controllers)</h3>
 				</section>
 
 				<section>
-					<h2><span class="red">JSP</span></h2>
-					<ul>
-						<li>
-							Presentation Layer (View)
-						</li>
-					</ul>
+					<h1><span class="red">JSP</span></h1>
+					<h3>Presentation Layer (View)</h3>
+				</section>
+
+				<section>
+					<h1><span class="red">Questions ?</span></h1>
+				</section>
+
+				<section>
+					<h1><span class="red">XML</span></h1>
+				</section>
+
+				<section>
+					<h1><span class="red">XML</span></h1>
+					<h2>EXtensible Markup Language</h2>
+				</section>
+
+				<section>
+					<h2>XML - <span class="red">describe</span> data</h2>
+					<h2>HTML - <span class="red">display</span> data</h2>
+				</section>
+
+				<section>
+					<h2><span class="red">XML Does Not DO Anything</span></h2>
+				</section>
+
+				<section>
+					<h2><span class="red">Java and XML</span></h2>
+				</section>
+
+				<section>
+					<h2>Java <span class="red">OOTB</span> Parsers</h2>
+				</section>
+
+				<section>
+					<h2><span class="red">DOM / SAX / STAX</span></h2>
+				</section>
+
+				<section>
+					<h1><span class="red">XPath</span></h1>
+				</section>
+
+				<section>
+					<h1><span class="red">XPath</span></h1>
+					<h2>EXtensible Markup Language</h2>
+				</section>
+
+				<section>
+					<h1><span class="red">XPath</span></h1>
+					<pre><code>
+						XPath xpath = XPathFactory.newInstance().newXPath();
+						XPathExpression expr = xpath.compile("//" + TASK + "[@id='" + id + "']");
+						return (Node) expr.evaluate(doc, XPathConstants.NODE);
+					</code></pre>
+				</section>
+
+				<section>
+					<h1><span class="red">XML to JSON</span></h1>
+				</section>
+
+				<section>
+					<h1><span class="red">JSON in Java</span></h1>
+					<pre>
+						<code>
+							<dependency>
+								<groupId>org.json</groupId>
+								<artifactId>json</artifactId>
+								<version>20141113</version>
+							</dependency>
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h1><span class="red">TODOs 5.0</span></h1>
 				</section>
 
 				<section>
@@ -373,18 +527,16 @@
 							<a href="http://docs.oracle.com/javaee/6/tutorial/doc/bnafe.html" target="_blank">Servlet</a>
 						</li>
 						<li>
-							<a href="http://www.w3schools.com/jquery/jquery_ref_ajax.asp " target="_blank">JSP</a>
+							<a href="http://beginnersbook.com/jsp-tutorial-for-beginners/" target="_blank">JSP</a>
+						</li>
+						<li>
+							<a href="http://www.w3schools.com/xml/default.asp" target="_blank">XML</a>
 						</li>
 						<li>
 							<a href="http://www.w3schools.com/jquery/jquery_ref_ajax.asp " target="_blank">jQuery AJAX</a>
 						</li>
 					</ul>
 				</section>
-
-				<section>
-					<h2>Questions <span class="red">&</span> Proposals</h2>
-				</section>
-
 			</div>
 
 		</div>
