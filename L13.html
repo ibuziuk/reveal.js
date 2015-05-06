@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>DataBases / MySql </title>
+
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Ilya Buziuk">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="css/reveal.min.css">
+	<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+	<script>
+	if( window.location.search.match( /print-pdf/gi ) ) {
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = 'css/print/pdf.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	}
+	</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" href="css/custom.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<header>
+				<img width="200" height="100" src="images/bsu/exadel-logo.png" class="exadel_logo">
+			</header>
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1><span class="red">Relational<span></h1>
+					<h1>Databases</h1>
+					<p>
+						<small>Created by <a href="https://github.com/ibuziuk" target="_blank">Ilya Buziuk</a> / <a href="https://twitter.com/ilyabuziuk"  target="_blank">@ilyabuziuk</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2><span class="red">Applications architecture</span></h2>
+					<img width="800" height="400" src="images/bsu/architecture.png" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">Applications architecture</span></h2>
+					<img width="800" height="400" src="images/bsu/architecture-done.png" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">Applications architecture</span></h2>
+					<img width="800" height="400" src="images/bsu/architecture-todo.png" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">Applications architecture</span></h2>
+					<img width="800" height="400" src="images/bsu/architecture-sql.png" class="no-border">
+				</section>
+
+				<section>
+					<h1><span class="red">Short History</span></h1>
+				</section>
+
+				<section>
+					<h1><span class="red">Database (DB)</span></h1>
+					<blockquote>Organized collection of data</blockquote>
+				</section>
+
+				<section>
+					<h2><span class="red">Database management systems (DBMS)</span></h2>
+					<blockquote>Organized collection of data</blockquote>
+				</section>
+
+				<section>
+					<h1><span class="red">Relational model</span></h1>
+				</section>
+
+				<section>
+					<h1><span class="red">Relational model</span></h1>
+					<blockquote>Organized collection of data</blockquote>
+				</section>
+
+				<section>
+					<h2><span class="red">Edgar Frank Codd</span></h2>
+					<img width="350" height="400" src="images/bsu/codd.jpg" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">Popular Relational Databases</span></h2>
+					<img width="800" height="600" src="images/bsu/databases.gif" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">MySQL</span></h2>
+					<img width="800" height="200" src="images/bsu/mysql.png" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">MySQL</span></h2>
+					<h2><span class="red">Codebase:</span> C / C++</h2>
+					<h2><span class="red">Primary Use:</span> DB Server</h2>
+					<h2><span class="red">Location:</span> GitHub</h2>
+				</section>
+
+				<section>
+					<h2><span class="red">Maria DB</span></h2>
+					<img width="800" height="200" src="images/bsu/maria.png" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">Larry Ellison</span></h2>
+					<img width="400" height="400" src="images/bsu/elisson.jpeg" class="no-border">
+				</section>
+
+				<section>
+					<h1><span class="red">SQL</span></h1>
+				</section>
+
+				<section>
+					<h2><span class="red">General Data Types</span></h2>
+				</section>
+
+
+				<section>
+					<h2><span class="red">Creation of tables</span></h2>
+					<ol>
+						<li>
+							<h3>CREATE DATABASE</h3>
+						</li>
+						<li>
+							<h3>ALTER DATABASE</h3>
+						</li>
+						<li>
+							<h3>DROP TABLE</h3>
+						</li>
+						<li>
+							<h3>ALTER TABLE</h3>
+						</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2><span class="red">Data Manipulation</span></h2>
+					
+					<ol>
+						<li>
+							<h4>SELECT</h4>
+						</li>
+						<li>
+							<h4>UPDATE</h4>
+						</li>
+						<li>
+							<h4>INSERT</h4>
+						</li>
+						<li>
+							<h4>DELETE</h4>
+						</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2><span class="red">From theory to practise</span></h2>
+				</section>
+
+				<section>
+					<h2>Console <span class="red"> + </span>GUI demo</h2>
+				</section>
+
+				<section>
+					<h2><span class="red">How to install?</span></h2>
+					<h2>MySQL Server<span class="red"> + </span>Workbench</h2>
+				</section>
+
+				<section>
+					<h2><span class="red">Windows</span></h2>
+					<ol>
+						<li>
+							<h3>Oracle account</h3>
+						</li>
+						<li>
+							<h3>MSI installer</h3>
+						</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2><span class="red">Mac OS</span></h2>
+					<ol>
+						<li>
+							<h3>Oracle account</h3>
+						</li>
+						<li>
+							<h3>PKG installer</h3>
+						</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2><span class="red">Linux</span></h2>
+					<ol>
+						<li>
+							<h4>sudo apt-get install mysql-server</h4>
+						</li>
+						<li>
+							<h4>sudo apt-get install mysql-client</h4>
+						</li>
+						<li>
+							<h4>sudo apt-get install mysql-workbench</h4>
+						</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2><span class="red">Useful links</span></h2>
+					<ul>
+						<li>
+							<a href="https://www.mysql.com/" target="_blank">MySQL</a>
+						</li>
+						<li>
+							<a href="http://www.w3schools.com/sql/" target="_blank">SQL</a>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Questions <span class="red">&</span> Proposals</h2>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				slideNumber: true,
+				center: true,
+				keyboard: true,
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: 'none', 
+
+				backgroundTransition: 'default',
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+				{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+</script>
+
+</body>
+</html>
+
