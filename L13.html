@@ -86,6 +86,11 @@
 				</section>
 
 				<section>
+					<h1><span class="red">DB Managment System (DBMS)</span></h1>
+					<blockquote>Computer software applications that interact with the user, other applications, and the database itself to capture and analyze data</blockquote>
+				</section>
+
+				<section>
 					<h2><span class="red">DB types</span></h2>
 					<ol>
 						<li>
@@ -127,12 +132,17 @@
 
 				<section>
 					<h2><span class="red">Edgar Codd</span></h2>
-					<img width="300" height="400" src="images/bsu/codd.jpg" class="no-border">
+					<img width="400" height="500" src="images/bsu/codd.jpg" class="no-border">
 				</section>
 
 				<section>
 					<h1><span class="red">Relational Model</span></h1>
 					<blockquote>All data is represented in terms of tuples, grouped into relations</blockquote>
+				</section>
+
+				<section>
+					<h2><span class="red">Relation</span></h2>
+					<img width="600" height="400" src="images/bsu/table.gif" class="no-border">
 				</section>
 
 				<section>
@@ -195,44 +205,24 @@
 				</section>
 
 				<section>
+					<h1><span class="red">Component Primary Key</span></h1>
+					<blockquote>PK is more than one column</blockquote>
+				</section>
+
+				<section>
 					<h1>Surrogate</h1>
 					<h2><span class="red"> vs </span></h2>
 					<h1>Natural</h1>
 				</section> 
 
 				<section>
-					<h1><span class="red">Database normalization</span></h1>
-					<blockquote>Organizing the attributes and tables of a relational database to minimize data redundancy</blockquote>
+					<h1><span class="red">FOREIGN KEY</span></h1>
+					<blockquote>FOREIGN KEY in one table points to a PRIMARY KEY in another table</blockquote>
 				</section>
 
 				<section>
-					<h1><span class="red">1NF</span></h1>
-					<blockquote>Each attribute contains only atomic values</blockquote>
-				</section>
-
-				<section>
-					<h1><span class="red">1NF</span></h1>
-					<img width="1000" height="500" src="images/bsu/1NF.gif" class="no-border">
-				</section>
-
-				<section>
-					<h1><span class="red">2NF</span></h1>
-					<blockquote><span class="red">1NF</span> + non-prime attribute is dependent on full PK</blockquote>
-				</section>
-
-				<section>
-					<h1><span class="red">2NF</span></h1>
-					<img width="1000" height="500" src="images/bsu/2NF.gif" class="no-border">
-				</section>
-
-				<section>
-					<h1><span class="red">3NF</span></h1>
-					<blockquote><span class="red">2NF</span> + non-prime attribute do not depend on other non-prime attributes</blockquote>
-				</section>
-
-				<section>
-					<h1><span class="red">In a Nutshell</span></h1>
-					<h2>The data is atomic <span class="red">[1NF]</span>, depends on the whole key <span class="red">[2NF]</span> and nothing but the key <span class="red">[3NF]</span></h2>
+					<h1>Foreign Key</h1>
+					<img width="1000" height="500" src="images/bsu/foreign.gif" class="no-border">
 				</section>
 
 				<section>
@@ -260,8 +250,84 @@
 				</section>
 
 				<section>
-					<h1>Foreign Key</h1>
-					<img width="1000" height="500" src="images/bsu/foreign.gif" class="no-border">
+					<h1><span class="red">Database normalization</span></h1>
+					<blockquote>Organizing the attributes and tables of a relational database to minimize data redundancy</blockquote>
+				</section>
+
+				<section>
+					<h1><span class="red">Bad Design</span></h1>
+					<img width="700" height="200" src="images/bsu/normalization.png" class="no-border">
+				</section>
+
+				<section>
+					<h1><span class="red">Reasons</span></h1>
+					<ol>
+						<li>
+							<h3>No duplicate data</h3>
+						</li>
+						<li>
+							<h3>Modification issues</h3>
+						</li>
+						<li>
+							<h3>Simplify queries</h3>
+						</li>
+					</ol>
+				</section>
+
+				<section>
+					<h1><span class="red">1NF</span></h1>
+					<blockquote>Each attribute contains only atomic values</blockquote>
+				</section>
+
+				<section>
+					<h1><span class="red">1NF</span></h1>
+					<img width="1000" height="500" src="images/bsu/1NF.gif" class="no-border">
+				</section>
+
+				<section>
+					<h1><span class="red">2NF</span></h1>
+					<blockquote><span class="red">1NF</span> + non-prime attribute is dependent on full PK</blockquote>
+				</section>
+
+				<section>
+					<h1><span class="red">2NF</span></h1>
+					<img width="800" height="400" src="images/bsu/2NFex.png" class="no-border">
+				</section>
+
+				<section>
+					<h1><span class="red">2NF</span></h1>
+					<img width="800" height="400" src="images/bsu/2NFexmod.png" class="no-border">
+				</section>
+
+				<section>
+					<h1><span class="red">3NF</span></h1>
+					<blockquote><span class="red">2NF</span> + non-prime attribute do not depend on other non-prime attributes</blockquote>
+				</section>
+
+				<section>
+					<h1><span class="red">3NF</span></h1>
+					<img width="800" height="400" src="images/bsu/3NF.png" class="no-border">
+				</section>
+
+				<section>
+					<h1><span class="red">3NF</span></h1>
+					<img width="800" height="400" src="images/bsu/3NFmod.png" class="no-border">
+				</section>
+
+				<section>
+					<h1><span class="red">3NF</span></h1>
+					<img width="600" height="200" src="images/bsu/3NFfix.png" class="no-border">
+					<img width="600" height="200" src="images/bsu/3NFfix2.png" class="no-border">
+				</section>
+
+				<section>
+					<h1><span class="red">3NF</span></h1>
+					<img width="800" height="400" src="images/bsu/3NFmod.png" class="no-border">
+				</section>
+
+				<section>
+					<h1><span class="red">In a Nutshell</span></h1>
+					<h2>The data is atomic <span class="red">[1NF]</span>, depends on the whole key <span class="red">[2NF]</span> and nothing but the key <span class="red">[3NF]</span></h2>
 				</section>
 
 				<section>
@@ -282,13 +348,13 @@
 				</section>
 
 				<section>
-					<h2><span class="red">Maria DB</span></h2>
-					<img width="800" height="200" src="images/bsu/maria.png" class="no-border">
+					<h2><span class="red">Larry Ellison</span></h2>
+					<img width="400" height="400" src="images/bsu/elisson.jpeg" class="no-border">
 				</section>
 
 				<section>
-					<h2><span class="red">Larry Ellison</span></h2>
-					<img width="400" height="400" src="images/bsu/elisson.jpeg" class="no-border">
+					<h2><span class="red">Maria DB</span></h2>
+					<img width="800" height="200" src="images/bsu/maria.png" class="no-border">
 				</section>
 
 				<section>
