@@ -99,7 +99,7 @@
 							<h3>Lib was proprietary</h3>
 						</li>
 						<li>
-							<h3>API lib hange -> code rewriting</h3>
+							<h3>API lib change -> code rewriting</h3>
 						</li>
 					</ol>
 				</section>
@@ -264,7 +264,7 @@
 
 				<section>
 					<h2><span class="red">Little Bobby Tables</span></h2>
-					<img width="1000" height="400" src="images/bsu/xkcd.png" class="no-border">
+					<img width="1000" height="300" src="images/bsu/xkcd.png" class="no-border">
 				</section>
 
 				<section>
@@ -308,12 +308,52 @@
 				</section>
 
 				<section>
+					<h2>Entity</h2>
+					<pre><code>
+public class Employee {
+    private int id;
+    private String name;
+
+    .... // geters & setters
+
+}						
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>DAO</h2>
+					<pre><code>
+interface EmployeeDAO {
+
+    List&lt;Employee&gt; findAll();
+    List&lt;Employee&gt; findById();
+    List&lt;Employee&gt; findByName();
+    boolean insertEmployee(Employee employee);
+    boolean updateEmployee(Employee employee);
+    boolean deleteEmployee(Employee employee);
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>DAO Implementation</h2>
+					<pre><code>
+
+class EmployeeDAOImpl implements EmployeeDAO {
+
+.... // Concrete implementation 
+
+}
+					</code></pre>
+				</section>
+
+				<section>
 					<h1><span class="red">SQL</span></h1>
 				</section>
 
 				<section>
 					<h2><span class="red">INNER JOIN</span></h2>
-					<img width="400" height="200" src="images/bsu/img_innerjoin.gif" class="no-border">
+					<img width="500" height="300" src="images/bsu/img_innerjoin.gif" class="no-border">
 				</section>
 
 
@@ -329,6 +369,16 @@
 
 				<section>
 					<h2>INNER JOIN<span class="red"> = </span>JOIN</h2>
+				</section>
+
+				<section>
+					<h2><span class="red">RIGHT JOIN</span></h2>
+					<img width="500" height="300" src="images/bsu/rightjoin.gif" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">LEFT JOIN</span></h2>
+					<img width="500" height="300" src="images/bsu/left.gif" class="no-border">
 				</section>
 
 				<section>
