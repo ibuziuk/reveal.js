@@ -63,345 +63,48 @@
 				</section>
 
 				<section>
-					<h1><span class="red">Apache DBCP</span></h1>
-					<blockquote>Structured Query Language for relational DBs</blockquote>
-				</section>
-				
-				<section>
-					<h2>Major DB vendors</h2>
-					<img width="600" height="400" src="images/bsu/major-database-vendors.jpg" class="no-border">
+					<h1><span class="red">JDBC</span></h1>
+					<blockquote>abstraction layer between Java and DB</blockquote>
 				</section>
 
 				<section>
-					<h1><span class="red">Issue</span></h1>
-					<blockquote>Necessity of common interface for all DB</blockquote>
-				</section>
-
-				<section>
-					<h2><span class="red">The situation in Past</span></h2>
-					<ol>
-						<li>
-							<h3>Each db vendor provided lib for it's db</h3>
-						</li>
-						<li>
-							<h3>Lib was proprietary</h3>
-						</li>
-						<li>
-							<h3>API lib change -> code rewriting</h3>
-						</li>
-					</ol>
+					<h2><span class="red">Applications architecture</span></h2>
+					<img width="800" height="400" src="images/bsu/bottleneck.png" class="no-border">
 				</section>
 
 				<section>
 					<h1><span class="red">Solution</span></h1>
-					<blockquote>Java Database Connectivity (JDBC)</blockquote>
+					<h1>Connection Pool</h1>
 				</section>
 
 				<section>
-					<h1><span class="red">The Gist</span></h1>
-					<blockquote>Avoid using any proprietary APIs</blockquote>
+					<h2>The Gist</h2>
+					<img width="600" height="400" src="images/bsu/connection-pool.png" class="no-border">
 				</section>
 
 				<section>
-					<h2><span class="red">JDBC architecture</span></h2>
-					<img width="600" height="500" src="images/bsu/jdbc-solution.png" class="no-border">
+					<h1><span class="red">Implement</span></h1>
+					<h1>Custom Pool ?</h1>
 				</section>
 
 				<section>
-					<h1><span class="red">JDBC</span></h1>
-					<ol>
-						<li>
-							<h3>Bridge between DB and Java world</h3>
-						</li>
-						<li>
-							<h3>Platform and vendor independent</h3>
-						</li>
-						<li>
-							<h3>Standard SQL statements</h3>
-						</li>
-					</ol>
-				</section>
-
-				<section>
-					<h1>JDBC<span class="red"> & </span>JAVA</h1>
-					<blockquote>"Write once, compile once, run anywhere"</blockquote>
-				</section>
-
-				<section>
-					<h1><span class="red">JDBC</span></h1>
-					<h1>architecture</h1>
-				</section>
-
-				<section>
-					<h2><span class="red">JDBC architecture</span></h2>
-					<img width="600" height="300" src="images/bsu/jdbc.png" class="no-border">
-				</section>
-
-
-				<section>
-					<h1><span class="red">java.sql.Driver</h1>
-					<blockquote>DB's launching point for JDBC</blockquote>
-				</section>
-
-				<section>
-					<h2><span class="red">java.sql.DriverManager</h2>
-					<blockquote>Maintains a list of Driver implementations</blockquote>
-				</section>
-
-				<section>
-					<h2><span class="red">java.sql.Connection</h2>
-					<blockquote>single DB connection / used for sending SQL statements</blockquote>
-				</section>
-
-				<section>
-					<h2><span class="red">JDBC architecture</span></h2>
-					<img width="800" height="600" src="images/bsu/JDBC-Architecture.gif" class="no-border">
-				</section>
-
-
-				<section>
-					<h2><span class="red">How to work with JDBC ?</span></h2>
-					<ol>
-						<li>
-							<h2>Connect to a DB</h2>
-						</li>
-						<li>
-							<h2>Query DB</h2>
-						</li>
-						<li>
-							<h2>Display the result</h2>
-						</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2><span class="red">How to work with JDBC ?</span></h2>
-					<img width="800" height="600" src="images/bsu/workflow.png" class="no-border">
+					<h1><span class="red">Apache DBCP 2</span></h1>
 				</section>
 
 				<section>
 					<h2>pom.xml</h2>
 					<pre><code>
-&lt;!-- MySQL connector --&gt;
 &lt;dependency&gt;
-  &lt;groupId&gt;mysql&lt;/groupId&gt;
-  &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
-  &lt;version&gt;5.1.35&lt;/version&gt;
+	&lt;groupId&gt;org.apache.commons&lt;/groupId&gt;
+	&lt;artifactId&gt;commons-dbcp2&lt;/artifactId&gt;
+	&lt;version&gt;2.1&lt;/version&gt;
 &lt;/dependency&gt;
 					</code></pre>
 				</section>
 
 				<section>
-					<h2>Create connection</span></h2>
-					<pre><code>
-			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Execute statement</span></h2>
-					<pre><code>
-			preparedStatement = connection.prepareStatement("INSERT INTO tasks (id, description, done) VALUES (?, ?, ?)");
-			preparedStatement.setInt(1, task.getId());
-			preparedStatement.setString(2, task.getDescription());
-			preparedStatement.setBoolean(3, task.isDone());
-			preparedStatement.executeUpdate();					
-					</code></pre>
-				</section>
-
-				<section>
-					<h1><span class="red">SQL injection</span></h1>
-					<blockquote>attack data-driven applications, in which malicious SQL statements are inserted into an entry field for execution (e.g. to dump the database contents to the attacker). TOP website vulnerabilities</blockquote>
-				</section>
-
-				<section>
-					<h2><span class="red">Examples</span></h2>
-					<p>User Name:<br>
-					<input type="text" name="uName" value=""></p>
-					<p>Password:<br>
-					<input type="text" name="uPass" value=""></p>
-				</section>
-
-				<section>
-					<h1><span class="red">Server Code</span></h1>
-					<pre><code>
-							txtUserId = getRequestString("UserId");
-							txtSQL = "SELECT * FROM Users WHERE UserId = " + txtUserId;			
-					</code></pre>
-				</section>
-
-				<section>
-					<h1><span class="red">1=1 ?</span></h1>
-					<pre><code>
-						SELECT * FROM Users WHERE UserId = 105 or 1=1	
-					</code></pre>
-				</section>
-
-				<section>
-					<h1><span class="red">Server Code</span></h1>
-					<pre><code>
-						uName = getRequestString("UserName");
-						uPass = getRequestString("UserPass");
-
-						sql = "SELECT * FROM Users WHERE Name ='" + uName + "' AND Pass ='" + uPass + "'"		
-					</code></pre>
-				</section>
-
-				<section>
-					<h1><span class="red">"" = "" ?</span></h1>
-					<pre><code>
-						SELECT * FROM Users WHERE Name ="" or ""="" AND Pass ="" or ""=""
-					</code></pre>
-				</section>
-
-				<section>
-					<h2><span class="red">Batched SQL Statements</span></h2>
-					<h3>UserId = "105; DROP TABLE users"</h3>	
-				</section>
-
-				<section>
-					<h1><span class="red">Attack</span></h1>
-					<pre><code>
-						SELECT * FROM Users WHERE UserId = 105; DROP TABLE users
-					</code></pre>
-				</section>
-
-				<section>
-					<h2><span class="red">Little Bobby Tables</span></h2>
-					<img width="1000" height="300" src="images/bsu/xkcd.png" class="no-border">
-				</section>
-
-				<section>
-					<h2>How to avoid Attacks <span class="red">?</span></h2>
-				</section>
-
-				<section>
-					<h2>Prepared Statement</h2>
-				</section>
-
-				<section>
-					<h2>Examples</h2>
-
-					<h3><span class="red">Robert'); DROP TABLE students;</span></h3>
-
-					<pre><code>
-						Statement stmt = conn.createStatement("INSERT INTO students VALUES('" + user + "')");
-						stmt.execute();
-					</code></pre>
-
-					<pre><code>
-						Statement stmt = conn.prepareStatement("INSERT INTO student VALUES(?)");
-						stmt.setString(1, user);
-						stmt.execute();
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Close resources in finally</h2>
-					<pre><code>
-						connection.close();
-
-						statement.close();
-					</code></pre>
-				</section>
-
-				<section>
-					<h2><span class="red">DAO</span></h2>
-					<blockquote>data access object</blockquote>
-					<blockquote>abstract interface to some type of database or other persistence mechanism</blockquote>
-				</section>
-
-				<section>
-					<h2>Entity</h2>
-					<pre><code>
-public class Employee {
-    private int id;
-    private String name;
-
-    .... // geters & setters
-
-}						
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>DAO</h2>
-					<pre><code>
-interface EmployeeDAO {
-
-    List&lt;Employee&gt; findAll();
-    List&lt;Employee&gt; findById();
-    List&lt;Employee&gt; findByName();
-    boolean insertEmployee(Employee employee);
-    boolean updateEmployee(Employee employee);
-    boolean deleteEmployee(Employee employee);
-}
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>DAO Implementation</h2>
-					<pre><code>
-
-class EmployeeDAOImpl implements EmployeeDAO {
-
-.... // Concrete implementation 
-
-}
-					</code></pre>
-				</section>
-
-				<section>
-					<h1><span class="red">SQL</span></h1>
-				</section>
-
-				<section>
-					<h2><span class="red">INNER JOIN</span></h2>
-					<img width="500" height="300" src="images/bsu/img_innerjoin.gif" class="no-border">
-				</section>
-
-
-				<section>
-					<h2>INNER JOIN</h2>
-					<pre><code>
-					SELECT c.CustomerName, o.OrderID, o.OrderDate
-					FROM Customers as c
-					INNER JOIN Orders as o
-					ON c.CustomerID = o.CustomerID
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>INNER JOIN<span class="red"> = </span>JOIN</h2>
-				</section>
-
-				<section>
-					<h2><span class="red">RIGHT JOIN</span></h2>
-					<img width="500" height="300" src="images/bsu/rightjoin.gif" class="no-border">
-				</section>
-
-				<section>
-					<h2><span class="red">LEFT JOIN</span></h2>
-					<img width="500" height="300" src="images/bsu/left.gif" class="no-border">
-				</section>
-
-				<section>
-					<h2><span class="red">Database transaction</span></h2>
-					<blockquote>A series of data manipulation statements that must either fully complete or fully fail, leaving the database in a consistent state</blockquote>
-				</section>
-
-				<section>
-					<h2>All<span class="red"> or </span>Nothing</h2>
-				</section>
-
-				<section>
-					<h2>Commit<span class="red"> & </span>Rollback</h2>
-				</section>
-
-				<section>
-					<h2><span class="red">JDBC Transactions Managment</span></h2>
-					<blockquote>Connections are in autocommit mode by default</blockquote>
+					<h1><span class="red">JDBC</span></h1>
+					<blockquote>Abstraction layer between Java and DB</blockquote>
 				</section>
 
 				<section>
@@ -409,7 +112,60 @@ class EmployeeDAOImpl implements EmployeeDAO {
 				</section>
 
 				<section>
-					<h2>TODOs<span class="red"> 6.0 </span></h2>
+					<h2>TODOs<span class="red"> 7.0 </span></h2>
+				</section>
+
+				<section>
+					<h1><span class="red">What's Next</span></h1>
+				</section>
+
+				<section>
+					<h2><span class="red">Multilayered architecture</span></h2>
+					<img width="600" height="500" src="images/bsu/mvc.png" class="no-border">
+				</section>
+
+				<section>
+					<h1><span class="red">Library</h1>
+					<h2>vs</h2>
+					<h1><span class="red">Framework</h1>
+				</section>
+
+				<section>
+					<h2>Library <span class="red"> = </span> Tool</h2>
+					<h2>Library <span class="red"> = </span> Code reuse</h2>
+				</section>
+
+				<section>
+					<h2>Framework <span class="red"> = </span> Way of Life</h2>
+					<h2>Framework <span class="red"> = </span> Skeleton</h2>
+					<h2>Framework <span class="red"> = </span> Ecosystem</h2>
+				</section>
+
+				<section>
+					<h2>Framework <span class="red">vs</span> Library</h2>
+					<img width="600" height="400" src="images/bsu/framework.png" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">Multilayered architecture</span></h2>
+					<img width="600" height="500" src="images/bsu/mvc.png" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">ORM</span></h2>
+					<blockquote>Object-relational mapping</blockquote>
+				</section>
+
+				<section>
+					<img width="500" height="500" src="images/bsu/hibernate.png" class="no-border">
+				</section>
+
+				<section>
+					<img width="600" height="400" src="images/bsu/spring.png" class="no-border">
+				</section>
+
+				<section>
+					<h1><span class="red">Why should you be carefull with</span> Frameworks ?</h1>
 				</section>
 
 				<section>
