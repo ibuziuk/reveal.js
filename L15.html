@@ -103,6 +103,26 @@
 				</section>
 
 				<section>
+					<h2><span class="red">Configuration</span></h2>
+					<ol>
+						<li>
+							<h4>maxTotal</h4>
+						</li>
+						<li>
+							<h4>maxIdle</h4>						
+						</li>
+						<li>
+							<h4>minIdle</h4>						
+						</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Just Configurate</h2>
+					<h2><span class="red">The rest will be done by Pool</span></h2>
+				</section>
+
+				<section>
 					<h1><span class="red">Authentication</h1>
 				</section>
 
@@ -220,8 +240,45 @@
 				</section>
 
 				<section>
+					<h1><span class="red">Rainbow tables</h1>
+				</section>
+
+				<section>
+					<h1><span class="red">Crypto Salt</h1>
+					<blockquote>Make a common password uncommon</blockquote>
+				</section>
+
+				<section>
+					<h1><span class="red">Purpose</h1>
+					<blockquote>hash-value will <span class="red">NOT</span> be found in any pre-calculated table</blockquote>
+				</section>
+
+				<section>
+					<h1><span class="red">Static Salt</h1>
+				</section>
+
+				<section>
+					<h1><span class="red">Dynamic Salt</h1>
+				</section>
+
+				<section>
+					<h1>If you need encryption, don't do it yourself. You'll get it <span class="red">wrong!</h1>
+				</section>
+
+				<section>
 					<h1><span class="red">The Good</h1>
-					<h1><span class="red">Bcrypt</san></h1>
+					<h1>Bcrypt</h1>
+				</section>
+
+				<section>
+					<h2>spring-security-crypto</h2>
+					<pre><code>
+&lt;dependency&gt;
+	&lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
+	&lt;artifactId&gt;spring-security-crypto&lt;/artifactId&gt;
+	&lt;version&gt;3.1.0.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+					</code></pre>
 				</section>
 
 				<section>
@@ -303,13 +360,13 @@ public class Customer {
 					<h2><span class="red">Useful links</span></h2>
 					<ul>
 						<li>
-							<a href="http://www.tutorialspoint.com/jdbc/" target="_blank">JDBC</a>
+							<a href="http://tutorials.jenkov.com/java-servlets/servlet-filters.html" target="_blank">Filter</a>
 						</li>
 						<li>
-							<a href="http://www.w3schools.com/sql/" target="_blank">SQL</a>
+							<a href="http://www.journaldev.com/1933/java-servlet-filter-example-tutorial#servlet-filter-example" target="_blank">Session</a>
 						</li>
 						<li>
-							<a href="https://www.mysql.com/" target="_blank">MySQL</a>
+							<a href="http://www.mkyong.com/spring-security/spring-security-password-hashing-example/" target="_blank">BCrypt</a>
 						</li>
 					</ul>
 				</section>
