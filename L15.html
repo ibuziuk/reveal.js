@@ -63,13 +63,23 @@
 				</section>
 
 				<section>
-					<h1><span class="red">JDBC</span></h1>
-					<blockquote>abstraction layer between Java and DB</blockquote>
+					<h1><span class="red">Issue</span></h1>
+					<blockquote>Connection openning for every single request is very <span class="red">expensive</span> operation</blockquote>
 				</section>
 
 				<section>
 					<h2><span class="red">Applications architecture</span></h2>
 					<img width="800" height="400" src="images/bsu/bottleneck.png" class="no-border">
+				</section>
+
+				<section>
+					<h1><span class="red">Singleton ?</span></h1>
+					<blockquote>Restricts the instantiation of a class to one object</blockquote>
+				</section>
+
+				<section>
+					<h1><span class="red">Bad Design</span></h1>
+					<blockquote>Single Connection per Application</blockquote>
 				</section>
 
 				<section>
@@ -79,7 +89,7 @@
 
 				<section>
 					<h2>The Gist</h2>
-					<img width="600" height="400" src="images/bsu/connection-pool.png" class="no-border">
+					<img width="800" height="400" src="images/bsu/connection-pool.png" class="no-border">
 				</section>
 
 				<section>
@@ -118,12 +128,32 @@
 				</section>
 
 				<section>
+					<h2><span class="red">Alternatives</span></h2>
+					<ol>
+						<li>
+							<h3>c3p0</h3>
+						</li>
+						<li>
+							<h3>HikariCP</h3>						
+						</li>
+						<li>
+							<h3>Tomcat JDBC Connection Pool</h3>						
+						</li>
+					</ol>
+				</section>
+
+				<section>
 					<h2>Just Configurate</h2>
 					<h2><span class="red">The rest will be done by Pool</span></h2>
 				</section>
 
 				<section>
 					<h1><span class="red">Authentication</h1>
+				</section>
+
+				<section>
+					<h1><span class="red">Issue</span></h1>
+					<blockquote>Anyone can send any request</blockquote>
 				</section>
 
 				<section>
@@ -143,7 +173,7 @@
 							<h4>implement Filter</h4>
 						</li>
 						<li>
-							<h4>Add @WebServlet Annotation</h4>						
+							<h4>Add @WebFilter Annotation</h4>						
 						</li>
 						<li>
 							<h4>Override doFilter </h4>						
@@ -217,7 +247,7 @@
 				</section>
 
 				<section>
-					<h2>TODOs<span class="red"> 7.0 </span></h2>
+					<h1>TODOs<span class="red"> 7.0 </span></h1>
 				</section>
 
 				<section>
@@ -342,7 +372,6 @@ public class Customer {
 					</code></pre>
 				</section>
 
-
 				<section>
 					<img width="600" height="400" src="images/bsu/spring.png" class="no-border">
 				</section>
@@ -374,7 +403,6 @@ public class Customer {
 				<section>
 					<h2>Questions <span class="red">&</span> Proposals</h2>
 				</section>
-
 			</div>
 
 		</div>
