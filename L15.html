@@ -107,7 +107,7 @@
 				</section>
 
 				<section>
-					<h2><span class="red">Authentication</span></h2>
+					<h1><span class="red">Authentication</span></h1>
 					<h2>Filter + Session</h2>
 				</section>
 
@@ -136,7 +136,72 @@
 				</section>
 
 				<section>
-					<h2><span class="red">Passwords</span></h2>
+					<img width="900" height="700" src="images/bsu/filter-1.png" class="no-border">
+				</section>
+
+				<section>
+					<img width="900" height="700" src="images/bsu/filter-2.png" class="no-border">
+				</section>
+
+				<section>
+					<img width="900" height="700" src="images/bsu/filter-3.png" class="no-border">
+				</section>
+
+				<section>
+					<img width="900" height="700" src="images/bsu/filter-4.png" class="no-border">
+				</section>
+
+				<section>
+					<img width="900" height="700" src="images/bsu/filter-6.png" class="no-border">
+				</section>
+
+				<section>
+					<img width="900" height="700" src="images/bsu/filter-6_1.png" class="no-border">
+				</section>
+
+				<section>
+					<img width="900" height="700" src="images/bsu/filter-7.png" class="no-border">
+				</section>
+
+				<section>
+					<img width="900" height="700" src="images/bsu/filter-8.png" class="no-border">
+				</section>
+
+				<section>
+					<img width="900" height="700" src="images/bsu/filter-9.png" class="no-border">
+				</section>
+
+				<section>
+					<img width="900" height="700" src="images/bsu/filter-10.png" class="no-border">
+				</section>
+
+				<section>
+					<img width="900" height="700" src="images/bsu/filter-11.png" class="no-border">
+				</section>
+
+				<section>
+					<img width="900" height="700" src="images/bsu/filter-12.png" class="no-border">
+				</section>
+
+				<section>
+					<img width="900" height="700" src="images/bsu/filter-13.png" class="no-border">
+				</section>
+
+				<section>
+					<img width="900" height="700" src="images/bsu/filter-14.png" class="no-border">
+				</section>
+
+				
+				<section>
+					<h2><span class="red">From theory to practise</span></h2>
+				</section>
+
+				<section>
+					<h2>TODOs<span class="red"> 7.0 </span></h2>
+				</section>
+
+				<section>
+					<h1><span class="red">Passwords</span></h1>
 				</section>
 
 				<section>
@@ -145,26 +210,18 @@
 				</section>
 
 				<section>
-					<h1>the Ugly Way</h1>
-					<h1><span class="red">open passwords</san></h1>
+					<h1><span class="red">The Ugly</span></h1>
+					<h1>open passwords</h1>
 				</section>
 
 				<section>
-					<h1>The Bad Way</h1>
-					<h1><span class="red">md5 / sha</san></h1>
+					<h1><span class="red">The Bad</h1>
+					<h1>md5 / sha</h1>
 				</section>
 
 				<section>
-					<h1>The Good Way</h1>
+					<h1><span class="red">The Good</h1>
 					<h1><span class="red">Bcrypt</san></h1>
-				</section>
-
-				<section>
-					<h2><span class="red">From theory to practise</span></h2>
-				</section>
-
-				<section>
-					<h2>TODOs<span class="red"> 7.0 </span></h2>
 				</section>
 
 				<section>
@@ -199,12 +256,43 @@
 				</section>
 
 				<section>
-					<h2><span class="red">ORM</span></h2>
+					<h1><span class="red">ORM</span></h1>
 					<blockquote>Object-relational mapping</blockquote>
 				</section>
 
 				<section>
+					<img width="300" height="300" src="images/bsu/hibernate.png" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">Example</span></h2>
+					<pre><code>
+@Entity
+@Table(name = "customer")
+public class Customer {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "customer_id")  
+	private Integer customerId;
+	
+	@NotEmpty
+	private String name;
+	
+	@OneToMany(mappedBy="customer", cascade=CascadeType.REMOVE)
+	private Set&lt;Project&gt; projects;
+
+	// getters, setters...
+					</code></pre>
+				</section>
+
+
+				<section>
 					<img width="600" height="400" src="images/bsu/spring.png" class="no-border">
+				</section>
+
+				<section>
+					<h2><span class="red">Spring</span></h2>
+					<img width="800" height="600" src="images/bsu/spring-framework.png" class="no-border">
 				</section>
 
 				<section>
