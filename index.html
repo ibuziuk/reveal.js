@@ -1,50 +1,95 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+	<title>reveal.js</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/white.css">
+	<link rel="stylesheet" href="css/reveal-override.css"/>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<!-- Printing and PDF exports -->
+	<script>
+	var link = document.createElement( 'link' );
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+	document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+</head>
+<body>
+	<div class="reveal">
+		
+		<!-- ====================== BETWEEN REVEAL AND SLIDES ====================== -->
+		<header class="left" style="position: absolute; left: 10px;"></header>
+		<header class="right" style="position: absolute; right: 10px;"></header>
+		<!-- ====================== BETWEEN REVEAL AND SLIDES ====================== -->
+		
+		<div class="slides">
+			<section data-state="headright">
+				<style>.headright header.right:after { content: url(img/eclipsecon/logo.gif); }</style>
+				<img src="img/eclipsecon/nodejs.png" alt="Node.js">
+				<img class="arrow-down" src="img/eclipsecon/arrow-down.png" alt="Arrow Down">
+				<img src="img/eclipsecon/eclipse.png" alt="Eclipse">
+			</section>
+
+
+			<section data-state="headright">
+				<style>.headright header.right:after { content: url(img/eclipsecon/logo.gif); }</style>
+				<!-- ====================== SLIDE TO THE RIGHT ====================== -->
+				<h2>As a User, I want to...</h2>
+				<ul>
+					<li>Launch Node.js Appa dasdasdasdas</li>
+					<li>Debug Node.js App</li>
+					<li>Bullet 3</li>
+					<li>Bullet 1</li>
+					<li>Bullet 2</li>
+					<li>Bullet 3</li>
+				</ul>
+			</section>
+
+			<section data-state="headright">
+				<style>.headright header.right:after { content: url(img/eclipsecon/logo.gif); }</style>
+				<!-- ====================== SLIDE TO THE RIGHT ====================== -->
+				<h2>As a User, I want to...</h2>
+				<ul>
+					<li>Launch Node.js Appa dasdasdasdas</li>
+					<li>Debug Node.js App</li>
+					<li>Bullet 3</li>
+					<li>Bullet 1</li>
+					<li>Bullet 2</li>
+					<li>Bullet 3</li>
+				</ul>
+			</section>
 		</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+	</div>
 
-		<script>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
 
+				transition: 'none',
+
+				progress: false,
+
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
-		</script>
-	</body>
-</html>
+			</script>
+		</body>
+		</html>
