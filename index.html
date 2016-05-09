@@ -31,8 +31,21 @@
 		<!-- ====================== BETWEEN REVEAL AND SLIDES ====================== -->
 		
 		<div class="slides">
+
 			<section data-state="headright">
-				<style>.headright header.right:after { content: url(img/eclipsecon/logo.gif); }</style>
+				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
+				<h2>npm & Bower</h2>
+				<img src="img/eclipsecon/gulp_grunt.png" alt="npm / bower logo">
+			</section>
+
+			<section data-state="headright">
+				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
+				<h2>Grunt & Gulp support</h2>
+				<img src="img/eclipsecon/gulp_grunt.png" alt="Gulp / Grunt logo">
+			</section>
+
+			<section data-state="headright">
+				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
 				<img src="img/eclipsecon/nodejs.png" alt="Node.js">
 				<img class="arrow-down" src="img/eclipsecon/arrow-down.png" alt="Arrow Down">
 				<img src="img/eclipsecon/eclipse.png" alt="Eclipse">
@@ -40,7 +53,7 @@
 
 
 			<section data-state="headright">
-				<style>.headright header.right:after { content: url(img/eclipsecon/logo.gif); }</style>
+				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
 				<!-- ====================== SLIDE TO THE RIGHT ====================== -->
 				<h2>As a User, I want to...</h2>
 				<ul>
@@ -51,7 +64,7 @@
 			</section>
 
 			<section data-state="headright">
-				<style>.headright header.right:after { content: url(img/eclipsecon/logo.gif); }</style>
+				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
 				<!-- ====================== SLIDE TO THE RIGHT ====================== -->
 				<h2>V8 Debugger features</h2>
 				<ul>
@@ -67,6 +80,7 @@
 	<script src="lib/js/head.min.js"></script>
 	<script src="js/reveal.js"></script>
 
+
 	<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
@@ -80,6 +94,8 @@
 				dependencies: [
 				{ src: 'plugin/markdown/marked.js' },
 				{ src: 'plugin/markdown/markdown.js' },
+	        	// Zoom in and out with Alt+click
+        		{ src: 'plugin/zoom-js/zoom.js', async: true },
 				{ src: 'plugin/notes/notes.js', async: true },
 				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
