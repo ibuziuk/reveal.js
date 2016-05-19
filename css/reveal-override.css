@@ -9,6 +9,19 @@
     height: 160px;
 }
 
+.logos {
+	width: 500px;
+	height: 200px;
+}
+
 h1 {
+	text-transform: none;
+}
+
+.red {
+	color: #CB171D;
+}
+
+.no-text-transform {
 	text-transform: none;
 }
