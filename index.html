@@ -47,10 +47,10 @@
 
 			<section data-state="headright">
 				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
-				<h1>Why <span class="red no-text-transform">JavaScript</span> is important ?</h1>
+				<h1>
+					<span class="no-text-transform">Why <span class="red no-text-transform">JavaScript</span> is important ?</span></h1>
 				<aside class="notes">
-					<p>Why JavaScript is important for Eclipse IDE ?</p>
-					This might be a rhetorical question but still trere is a point
+					<p>Why JavaScript is important for Eclipse IDE in particular?</p>
 				</aside>
 			</section>
 
@@ -59,7 +59,6 @@
 				<a target="_blank" href="http://stackoverflow.com/research/developer-survey-2016#most-popular-technologies-per-occupation">
 					<img src="img/eclipsecon/stack-overflow-survey-2016.png" alt="Stack Overflow Survey 2016">
 				</a>
-				
 				<aside class="notes">
 					Reference to Stack Overflow Survey 2016
 				</aside>
@@ -74,8 +73,9 @@
 					<aside class="notes">
 						<ul>
 							<li>Direct quote from the survey</li>
-							<li>Full-stack developer is a trand</li>
-							<li>IDE can not stay competitive without JavaScript</li>
+							<li>Full-stack developer is a trend</li>
+							<li>Eclipse can not stay competitive without JavaScript</li>
+							<li>JavaScript is one of the most, if not the most, important thing that should be improved in a short-run</li>
 						</ul>
 					</aside>
 			</section>
@@ -83,37 +83,56 @@
 			<section data-state="headright">
 				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
 				<h1>
-					<span class="no-text-transform">Neon</span>
-				</h1>
-				<h2>
 					<span class="no-text-transform">New</span>
 					<span class="red">&</span>
-					<span class="no-text-transform">Noteworty</span>
-				</h2>
-			</section>
-
+					<span class="no-text-transform">Noteworthy</span>
+				</h1>
+			</section>			
+			
+			
 			<section data-state="headright">
 				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
 				<h1><span class="no-text-transform">ECMAScript 2015</span></h2>
 				<img src="img/eclipsecon/es6.png" alt="ES 2015">
 			</section>
-
+			
+			
 			<section data-state="headright">
 				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
-				<h1><span class="no-text-transform">JSON editor</span></h2>
-				<img class="json-logo" src="img/eclipsecon/json.png" alt="JSON editor">
+				<h2><span class="no-text-transform">Before Neon</span></h2>
+				<ul>
+					<li>Outdated parser</li>
+					<li>Forked from JDT’s Java parser</li>
+					<li>ECMASCript 3 (1999) support</li>
+					<li>No community</li>
+					<li>Performance issues</li>
+				</ul>
+				<aside class="notes">
+						<ul>
+							<li>Obsolete (support only ECMASCript 3 (1999) / false errors / broken content assist etc.)</li>
+							<li>Supported only by JSDT committers</li>
+							<li>DOM AST model / hard to replace (ASTNode ~ 4000 references)</li>
+						</ul>
+				</aside>
 			</section>
-
+			
 			<section data-state="headright">
 				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
-				<h1><span class="no-text-transform">Bower / npm</span></h2>
-				<img class="logos" src="img/eclipsecon/bower-npm.png" alt="npm / Bower logo">
-			</section>
-
-			<section data-state="headright">
-				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
-				<h1><span class="no-text-transform">Grunt / Gulp</span></h2>
-				<img class="logos" src="img/eclipsecon/gulp_grunt.png" alt="Gulp / Grunt logo">
+				<h2><span class="no-text-transform">Esprima parser</span></h2>
+				<ul>
+					<li>ECMAScript 2015 support</li>
+					<li>Written in JavaScript</li>
+					<li>Supported by community (JQuery foundation)</li>
+					<li>Tolerant parsing support</li>
+					<li>Nashorn is used for running in JSDT</li>
+				</ul>
+				<aside class="notes">
+						<ul>
+							<li>Nashorn (part of Java 8) is used for running in JSDT (transformation to internal AST is required)</li>
+							<li>Relatively fast (benchmarks results)</li>
+							<li>Slow with parsing big files (> 2 mb) first time (due to Nashorn perfomance / after JIT optimize it it becomes better)</li>
+						</ul>
+				</aside>
 			</section>
 
 			<section data-state="headright">
@@ -124,26 +143,39 @@
 
 			<section data-state="headright">
 				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
-				<h2>As a User, I want to...</h2>
+				<h2><span class="no-text-transform">As a User, I want to...</span></h2>
 				<ul>
 					<li>Have an editor with ES 2015 (ES6) support</li>
 					<li>Run Node.js Apps</li>
 					<li>Debug Node.js Apps</li>
+				</ul>
+				<aside class="notes">
+					Node.js user story
+				</aside>
+			</section>
+
+			<section data-state="headright">
+				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
+				<h2><span class="no-text-transform">Main Features</span></h2>
+				<ul>
+					<li>Node.js Runtime definition</li>
+					<li>Launch / Debug Configuration</li>
+					<li>V8 Debugger</li>
 				</ul>
 			</section>
 
 			<section data-state="headright">
 				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
 				<h1><span class="no-text-transform">V8 Debugger</h2></span>
-				<img src="img/eclipsecon/debugger.png" alt="Debugger logo">
+				<img class="debugger-logo" src="img/eclipsecon/debugger.png" alt="Debugger logo">
 			</section>
 
 			<section data-state="headright">
 				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
-				<h2><span class="no-text-transform">Debugger</span></h2>
+				<h2><span class="no-text-transform">Brief History</span></h2>
 				<ul>
-					<li>Originally developed by Google 
-						<a href="https://github.com/ChromeDevTools/cdt-java">https://github.com/ChromeDevTools/cdt-java</a>
+					<li>Originally developed by 
+						<a href="https://github.com/ChromeDevTools/cdt-java">Google</a>
 					</li>
 					<li>Google agreed to change license from BSD to EPL</li>
 					<li>Sources passed Eclipse CQ</li>
@@ -154,12 +186,43 @@
 
 			<section data-state="headright">
 				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
-				<h2>V8 Debugger features</h2>
+				<h2><span class="no-text-transform">Main features</span></h2>
 				<ul>
 					<li>Add / Remove breakpoints</li>
 					<li>Hovering over JS variables / literals</li>
+					<li>Step into, Step over etc.</li>
 					<li>Live Editing (Hot-swapping)</li>
 				</ul>
+				<aside class="notes">
+					Details are covered in the demo part
+				</aside>
+			</section>
+
+			<section data-state="headright">
+				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
+				<h1><span class="no-text-transform">JSON editor</span></h2>
+				<img class="json-logo" src="img/eclipsecon/json.png" alt="JSON editor">
+				<aside class="notes">
+					Details are covered in the demo part
+				</aside>
+			</section>
+
+			<section data-state="headright">
+				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
+				<h1><span class="no-text-transform">Bower / npm</span></h2>
+				<img class="logos" src="img/eclipsecon/bower-npm.png" alt="npm / Bower logo">
+				<aside class="notes">
+					Details are covered in the demo part
+				</aside>
+			</section>
+
+			<section data-state="headright">
+				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
+				<h1><span class="no-text-transform">Grunt / Gulp</span></h2>
+				<img class="logos" src="img/eclipsecon/gulp_grunt.png" alt="Gulp / Grunt logo">
+				<aside class="notes">
+					Details are covered in the demo part
+				</aside>
 			</section>
 
 			<section data-state="headright">
@@ -172,28 +235,87 @@
 
 			<section data-state="headright">
 				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
-				<h1>DEMO</h1>
+				<h1><span class="no-text-transform">Demo</span></h1>
+				<aside class="notes">
+					<ul>
+						<li>Parser / content assist</a>
+						</li>
+						<li>JSON editor / .bowerrc</li>
+						<li>Bower / npm  (Init / Install)</li>
+						<li>Grunt / Gulp (connect / watch)</li>
+						<li>Node.js launching</li>
+						<li>Node.js debugging</li>
+					</ul>
+				</asside>
 			</section>
 
 			<section data-state="headright">
 				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
-				<h1><span class="no-text-transform">Neon.1</span></h1>
-				<h1><span class="red">&</span></h1>
-				<h1><span class="no-text-transform">Beyond</span></h1>
+				<h1>
+					<span class="no-text-transform">Neon.1</span>
+					<span class="red">&</span>
+					<span class="no-text-transform">Beyond</span>
+				</h1>
+				<aside class="notes">
+					Plans for future releases
+				</aside>
 			</section>
 
 			<section data-state="headright">
 				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
-				<h1>Backlog</h1>
+				<h2>
+					<span class="no-text-transform">Closure compiler</span>
+				</h2>
 				<ul>
-					<li>Switch to Closure compiler</li>
-					<li>JavaScript Debugging</li>
+					<li>ECMAScript 2015 support</li>
+					<li>Developed by <a href="https://github.com/google/closure-compiler">Google</a></li>
+					<li>Written in Java</li>
+					<li>Active community</li>
+					<li>Better tolerant parsing</li>
+					<li>Approved by Eclipse IP team</li>
 				</ul>
+				<aside class="notes">
+						<ul>
+							<li>Written in Java (no integration problem - no need to use Nashorn)</li>
+							<li>Fast ( > 10x faster than Esprima)</li>
+							<li>Active community</li>
+							<li>Better tolerant parsing - linting / unused variables </li>
+							<li>Converting from Closure Internal Representation to JSDT DOM AST model is required (might be time consuming)</li>
+						</ul>
+				</aside>
 			</section>
 
 			<section data-state="headright">
 				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
-				<h1>Questions ?</h1>
+				<h2>
+					<span class="no-text-transform">JavaScript <span class="red">front-end</span> Debugging</span>
+				</h2>
+			</section>
+
+			<section data-state="headright">
+				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
+				<h2>
+					<span class="no-text-transform">Language services</span>
+				</h2>
+				<ul>
+					<li>Use <a href="https://github.com/Microsoft/vscode-languageserver-protocol">VSCode</a> Client / Server Language Protocol</li>
+					<li>Use services for content-assist, code completion etc.</li>
+					<li>CQs for Node.js and typescript are opened</li>
+				</ul>
+				<aside class="notes">
+						<ul>
+							<li>Node.js is required (shipping node.js with Eclipse is not yet approved by IP team)</li>
+							<li>No need to use AST</li>
+							<li>Single generic language editor concept</li>
+							<li>Just like working with server (send request → get JSON responce)</li>
+							<li>Great perfomance</li>
+						</ul>
+				</aside>
+			</section>
+
+			<section data-state="headright">
+				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
+				<h1><span class="no-text-transform">Questions ?</span></h1>
 			</section>
 
 			<section data-state="headright">
@@ -212,9 +334,12 @@
 				<p>Pavel Feldman, Google (Debugger)</p>
 			</section>
 
+			<section data-state="headright">
+				<style>.headright header.right:after { content: url(img/eclipsecon/eclipsecon.png); }</style>
+				<img src="img/eclipsecon/feedback.png" alt="Evaluate the Sessions">
+			</section>
+
 		</div>
-
-
 	</div>
 
 	<script src="lib/js/head.min.js"></script>
@@ -224,6 +349,7 @@
 	<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
+				
 				history: true,
 
 				controls: true,

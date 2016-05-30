@@ -4,6 +4,10 @@
   box-shadow: none;
 }
 
+.reveal p  {
+  font-size: 0.8em;
+}
+
 .arrow-down {
     width: 160px;
     height: 160px;
@@ -17,6 +21,11 @@
 .json-logo {
 	width: 200px;
 	height: 200px;
+}
+
+.debugger-logo {
+	width: 300px;
+	height: 300px;
 }
 
 h1 {
